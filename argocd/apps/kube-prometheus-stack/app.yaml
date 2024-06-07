@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/watalabo/k3s-infra
+    repoURL: https://github.com/ikanago/homelab
     targetRevision: HEAD
     path: helm/charts/kube-prometheus-stack
   destination:

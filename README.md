@@ -24,6 +24,25 @@ Then you see system pods.
 kubectl get pods -A
 ```
 
+## Setup Cloudflare Tunnel
+First, install cloudflared. c.f. https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/
+Then log in.
+```bash
+cloudflared tunnel login
+```
+
+Create a tunnel.
+```bash
+cloudflared tunnel create --credentials-file ./credentials.json k3s-tunnel
+```
+
+Create a secret to hold the credentials.
+```bash
+kubectl create secret generic cloudflare-tunnel-credentials --from-file=credentials.json=credentials.json
+```
+
+Add a DNS record: CNAME from subdomain to the <tunnelID>.cfargotunnel.com.
+
 ## Setup Argo CD
 Follow [Argo CD Getting Started document](https://argo-cd.readthedocs.io/en/stable/getting_started/#2-download-argo-cd-cli).
 
