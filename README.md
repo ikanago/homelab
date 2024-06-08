@@ -38,12 +38,12 @@ cloudflared tunnel create --credentials-file ./credentials.json k3s-tunnel
 
 Create a secret to hold the credentials.
 ```bash
-kubectl create secret generic cloudflare-tunnel-credentials --from-file=credentials.json=credentials.json
+kubectl create secret generic cloudflare-tunnel-credentials -n cloudflare --from-file=credentials.json=credentials.json
 ```
 
 Add a DNS record: CNAME from subdomain to the <tunnelID>.cfargotunnel.com.
 
-## Setup Argo CD
+## Argo CD
 Follow [Argo CD Getting Started document](https://argo-cd.readthedocs.io/en/stable/getting_started/#2-download-argo-cd-cli).
 
 First, install Argo CD by the following commands decribed in [doc](https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd).
@@ -65,3 +65,8 @@ argocd login --core
 ```
 
 We can skip step 3 to 5 in the document as we installed Argo CD core components only.
+
+I adopt app of apps pattern for deploy convinience. Just apply the root application manifest.
+```bash
+kubectl apply -f argocd/apps.yaml
+```
