@@ -7,6 +7,8 @@ cloudflare-tunnel:
     # Define ingress rules for the tunnel. See
     # https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress
     ingress:
+      - hostname: prometheus.ikanago.dev
+        service: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
       - hostname: grafana.ikanago.dev
         service: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local:80
 
