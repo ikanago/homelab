@@ -70,3 +70,9 @@ I adopt app of apps pattern for deploy convinience. Just apply the root applicat
 ```bash
 kubectl apply -f argocd/apps.yaml
 ```
+
+## Grafana Setup
+Extract the initial password for "admin" user.
+```bash
+kubectl get secrets -n monitoring kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode
+```
