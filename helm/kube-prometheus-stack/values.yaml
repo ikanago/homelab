@@ -33,7 +33,6 @@ kube-prometheus-stack:
 
   grafana:
     enabled: true
-    deploymentStrategy: Recreate
     defaultDashboardsTimeZone: Asia/Tokyo
 
   alertmanager:
