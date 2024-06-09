@@ -31,5 +31,10 @@ kube-prometheus-stack:
       prometheusOperator: false
       windows: false
 
+  grafana:
+    enabled: true
+    deploymentStrategy: Recreate
+    defaultDashboardsTimeZone: Asia/Tokyo
+
   alertmanager:
     enabled: false
