@@ -1,0 +1,8 @@
+argo/argo-cd:
+  controller:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  dex:
+    enabled: false

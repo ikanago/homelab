@@ -1,8 +1,23 @@
-argo/argo-cd:
-  controller:
-    metrics:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-  dex:
-    enabled: false
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ikanago/homelab
+    targetRevision: HEAD
+    path: helm/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true

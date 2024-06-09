@@ -46,25 +46,22 @@ Add a DNS record: CNAME from subdomain to the <tunnelID>.cfargotunnel.com.
 ## Argo CD
 Follow [Argo CD Getting Started document](https://argo-cd.readthedocs.io/en/stable/getting_started/#2-download-argo-cd-cli).
 
-First, install Argo CD by the following commands decribed in [doc](https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd).
-Notice this installs core components, so Web UI and SSO are disabled.
-```bash
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
-```
-
 Install Argo CD CLI.
 If you have Homebrew, run
 ```bash
 brew install argocd
 ```
 
+Install Argo CD via helm.
+```bash
+helm dependency build ./helm/argocd
+helm install -f helm/argocd/values.yaml argocd ./helm/argocd/
+```
+
 Then complete access to Argo CD with this command.
 ```bash
 argocd login --core
 ```
-
-We can skip step 3 to 5 in the document as we installed Argo CD core components only.
 
 I adopt app of apps pattern for deploy convinience. Just apply the root application manifest.
 ```bash
