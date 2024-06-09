@@ -1,4 +1,4 @@
-argo/argo-cd:
+argo-cd:
   controller:
     metrics:
       enabled: true
