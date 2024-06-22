@@ -33,7 +33,9 @@ kube-prometheus-stack:
 
   prometheus:
     prometheusSpec:
+      serviceMonitorSelectorNilUsesHelmValues: false
       serviceMonitorNamespaceSelector: {}
+      serviceMonitorSelector: {}
 
   grafana:
     enabled: true
