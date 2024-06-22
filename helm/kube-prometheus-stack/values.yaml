@@ -34,6 +34,12 @@ kube-prometheus-stack:
   prometheus:
     prometheusSpec:
       serviceMonitorNamespaceSelector:
+        matchExpressions:
+          - key: app.kubernetes.io/part-of
+            operator: In
+            values:
+              - argocd
+              - kube-prometheus-stack
         matchLabels:
           app.kubernetes.io/component: exporter
 
