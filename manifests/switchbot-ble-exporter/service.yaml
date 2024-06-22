@@ -4,10 +4,10 @@ metadata:
   name: switchbot-ble-exporter
   namespace: monitoring
   labels:
-    app: switchbot-ble-exporter
+    app.kubernetes.io/name: switchbot-ble-exporter
 spec:
   selector:
-    app: switchbot-ble-exporter
+    app.kubernetes.io/name: switchbot-ble-exporter
   ports:
     - protocol: TCP
       port: 8080

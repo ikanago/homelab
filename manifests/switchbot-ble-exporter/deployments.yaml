@@ -4,16 +4,16 @@ metadata:
   name: switchbot-ble-exporter
   namespace: monitoring
   labels:
-    app: switchbot-ble-exporter
+    app.kubernetes.io/name: switchbot-ble-exporter
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: switchbot-ble-exporter
+      app.kubernetes.io/name: switchbot-ble-exporter
   template:
     metadata:
       labels:
-        app: switchbot-ble-exporter
+        app.kubernetes.io/name: switchbot-ble-exporter
     spec:
       containers:
         - name: switchbot-ble-exporter

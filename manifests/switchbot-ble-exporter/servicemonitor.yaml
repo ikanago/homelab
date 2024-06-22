@@ -4,11 +4,12 @@ metadata:
   name: switchbot-ble-exporter
   namespace: monitoring
   labels:
-    app: switchbot-ble-exporter
+    app.kubernetes.io/name: switchbot-ble-exporter
+    app.kubernetes.io/component: exporter
 spec:
   selector:
     matchLabels:
-      app: switchbot-ble-exporter
+      app.kubernetes.io/name: switchbot-ble-exporter
   endpoints:
     - scheme: http
       path: /metrics

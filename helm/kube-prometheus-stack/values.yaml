@@ -34,11 +34,8 @@ kube-prometheus-stack:
   prometheus:
     prometheusSpec:
       serviceMonitorNamespaceSelector:
-        matchExpressions:
-          - key: kubernetes.io/metadata.name
-            operator: In
-            values:
-              - monitoring
+        matchLabels:
+          app.kubernetes.io/component: exporter
 
   grafana:
     enabled: true
