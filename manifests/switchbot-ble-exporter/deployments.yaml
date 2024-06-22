@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: switchbot-ble-exporter
+  namespace: monitoring
+  labels:
+    app: switchbot-ble-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: switchbot-ble-exporter
+  template:
+    metadata:
+      labels:
+        app: switchbot-ble-exporter
+    spec:
+      containers:
+        - name: switchbot-ble-exporter
+          image: ghcr.io/ikanago/switchbot-ble-exporter:sha256:39c3c78c9a148cba5ae4f6fd101b066a33d0bdd440b989f3ef2257e3e10a22c7
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"

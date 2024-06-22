@@ -31,6 +31,15 @@ kube-prometheus-stack:
       prometheusOperator: false
       windows: false
 
+  prometheus:
+    prometheusSpec:
+      serviceMonitorNamespaceSelector:
+        matchExpressions:
+          - key: kubernetes.io/metadata.name
+            operator: In
+            values:
+              - monitoring
+
   grafana:
     enabled: true
     defaultDashboardsTimeZone: Asia/Tokyo
