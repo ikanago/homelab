@@ -17,12 +17,14 @@ spec:
     spec:
       containers:
         - name: switchbot-ble-exporter
-          image: ghcr.io/ikanago/switchbot_ble_exporter:main@sha256:2c69af08fb02e13f824f5c99f0b2c43a5914c1af9e1ecf1ba2f849b5d9441ae2
+          image: ghcr.io/ikanago/switchbot_ble_exporter:latest@sha256:d5bc760d03a99d1a00864c58ec150ae85e9690382c8c931ccfb1aa1bc0779405
           ports:
             - containerPort: 8080
           env:
             - name: PORT
               value: "8080"
+            - name: RUST_LOG
+              value: "info"
           securityContext:
             capabilities:
               add:
