@@ -14,5 +14,5 @@ spec:
       path: /metrics
       targetPort: 8080
       interval: 1m
-  namaspaceSelector:
+  namespaceSelector:
     any: true
