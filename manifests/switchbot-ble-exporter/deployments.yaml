@@ -27,4 +27,4 @@ spec:
             capabilities:
               add:
                 - NET_ADMIN
-          hostNetwork: true
+      hostNetwork: true
