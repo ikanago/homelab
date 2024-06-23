@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: switchbot-ble-exporter
-          image: ghcr.io/ikanago/switchbot_ble_exporter:latest@sha256:801a44964512a11df9a16826654b6ebc56dcff93ab3b6b49cda3c9a09e785ae7
+          image: ghcr.io/ikanago/switchbot_ble_exporter:latest@sha256:9832f8a1d78b00441b603c63c524b2fd82a553df608c54cb995ee8aa23569c08
           ports:
             - containerPort: 8080
           env:
