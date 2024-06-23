@@ -24,8 +24,8 @@ spec:
         httpGet:
           path: /
           port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 300
+        initialDelaySeconds: 5
+        periodSeconds: 300
       securityContext:
         capabilities:
           add:
