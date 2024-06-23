@@ -1,4 +1,4 @@
-# k3s-infra
+# homelab
 
 **THIS REPOSITORY IS PUBLIC!!!**
 Argo CD need authentication to access a private repository, but there is no way to access a private repository without specific user's credential.
