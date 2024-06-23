@@ -15,7 +15,7 @@
             ],
             "description": "Docker image tags",
             "matchStrings": [
-                "image: (?<depName>(?:ghcr\\.io|docker\\.io)\\/[^:]+?):(?<currentValue>[^@]+)@(?<currentDigest>sha256:[a-f0-9]+)"
+                "image: (?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
             ],
             "datasourceTemplate": "docker",
             "versioningTemplate": "docker"
