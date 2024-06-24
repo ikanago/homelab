@@ -1,8 +1,5 @@
 # homelab
 
-**THIS REPOSITORY IS PUBLIC!!!**
-Argo CD need authentication to access a private repository, but there is no way to access a private repository without specific user's credential.
-
 ## Install k3s
 k3s doc: https://docs.k3s.io/installation/configuration
 ```bash
