@@ -50,6 +50,7 @@ kube-prometheus-stack:
     enabled: true
     defaultDashboardsTimeZone: Asia/Tokyo
     deploymentStrategy:
+      rollingUpdate: null
       type: Recreate
     persistence:
       type: pvc
