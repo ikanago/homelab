@@ -1,11 +1,11 @@
 nextcloud:
+  metrics:
+    enabled: true
   internalDatabase:
     enabled: false
   externalDatabase:
     enabled: true
     type: postgresql
-  metrics:
-    enabled: true
   postgresql:
     enabled: true
     global:
