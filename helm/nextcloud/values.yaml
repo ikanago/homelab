@@ -1,0 +1,15 @@
+nextcloud:
+  internalDatabase:
+    enabled: false
+  externalDatabase:
+    enabled: true
+    type: postgresql
+  persistence:
+    nextcloudData:
+      enabled: true
+      size: 20Gi
+      storageClass: longhorn
+      annotations:
+        recurring-job.longhorn.io/snapshot: enabled
+  metrics:
+    enabled: true
