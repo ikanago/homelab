@@ -4,14 +4,6 @@ nextcloud:
   externalDatabase:
     enabled: true
     type: postgresql
-  persistence:
-    enabled: true
-    storageClass: longhorn
-    size: 4Gi
-    nextcloudData:
-      enabled: true
-      size: 4Gi
-      storageClass: longhorn
   metrics:
     enabled: true
   postgresql:
