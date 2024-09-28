@@ -10,10 +10,8 @@ nextcloud:
     size: 4Gi
     nextcloudData:
       enabled: true
-      size: 20Gi
+      size: 4Gi
       storageClass: longhorn
-      annotations:
-        recurring-job.longhorn.io/snapshot: enabled
   metrics:
     enabled: true
   postgresql:
@@ -25,3 +23,10 @@ nextcloud:
           secretKeys:
             adminPasswordKey: admin-password
             userPasswordKey: user-password
+    primary:
+      persistence:
+        enabled: true
+        storageClass: longhorn
+        size: 20Gi
+        labels:
+          recurring-job.longhorn.io/snapshot: enabled
