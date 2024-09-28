@@ -2,6 +2,9 @@ longhorn:
   persistence:
     defaultClassReplicaCount: 1
 
+  defaultSettings:
+    snapshotMaxCount: 50
+
   longhornUI:
     replicas: 1
 
