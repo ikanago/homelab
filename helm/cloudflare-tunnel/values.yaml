@@ -11,6 +11,8 @@ cloudflare-tunnel:
         service: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
       - hostname: grafana.ikanago.dev
         service: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local:80
+      - hostname: longhorn.ikanago.dev
+        service: http://longhorn-frontend.longhorn.svc.cluster.local:80
 
   image:
     tag: "2024.6.0"
