@@ -36,10 +36,30 @@ kube-prometheus-stack:
       serviceMonitorSelectorNilUsesHelmValues: false
       serviceMonitorNamespaceSelector: {}
       serviceMonitorSelector: {}
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: longhorn
+            accessModes:
+              - "ReadWriteOnce"
+            resources:
+              requests:
+                storage: 10Gi
 
   grafana:
     enabled: true
     defaultDashboardsTimeZone: Asia/Tokyo
+    deploymentStrategy:
+      type: Recreate
+    persistence:
+      type: pvc
+      enabled: true
+      storageClassName: longhorn
+      accessModes:
+        - ReadWriteOnce
+      size: 2Gi
+      finalizers:
+        - kubernetes.io/pvc-protection
 
   alertmanager:
     enabled: false
