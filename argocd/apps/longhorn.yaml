@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/ikanago/homelab
     targetRevision: HEAD
-    path: helm/kube-prometheus-stack
+    path: helm/longhorn
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn
