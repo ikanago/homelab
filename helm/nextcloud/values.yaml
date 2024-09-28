@@ -13,3 +13,11 @@ nextcloud:
         recurring-job.longhorn.io/snapshot: enabled
   metrics:
     enabled: true
+  postgresql:
+    global:
+      postgresql:
+        auth:
+          existingSecret: nextcloud-postgresql-creds
+          secretKeys:
+            adminPasswordKey: admin-password
+            userPasswordKey: user-password

@@ -70,3 +70,9 @@ Extract the initial password for "admin" user.
 ```bash
 kubectl get secrets -n monitoring kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
+
+## Nextcloud Setup
+Create a secret for PostgreSQL.
+```bash
+kubectl create secret generic nextcloud-postgresql-creds -n nextcloud --from-literal=admin-password='' --from-literal=user-password=''
+```
