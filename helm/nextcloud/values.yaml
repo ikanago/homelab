@@ -1,8 +1,7 @@
 nextcloud:
+  host: nextcloud.ikanago.dev
   metrics:
     enabled: true
-  trustedDomains:
-    - nextcloud.ikanago.dev
   internalDatabase:
     enabled: false
   externalDatabase:
