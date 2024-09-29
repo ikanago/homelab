@@ -6,6 +6,11 @@ nextcloud:
   externalDatabase:
     enabled: true
     type: postgresql
+    existingSecret:
+      enabled: true
+      secretName: nextcloud-postgresql-creds
+      usernameKey: username
+      passwordKey: user-password
   postgresql:
     enabled: true
     global:
