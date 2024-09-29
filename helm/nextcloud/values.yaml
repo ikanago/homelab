@@ -1,5 +1,6 @@
 nextcloud:
-  host: nextcloud.ikanago.dev
+  nextcloud:
+    host: nextcloud.ikanago.dev
   metrics:
     enabled: true
   internalDatabase:
