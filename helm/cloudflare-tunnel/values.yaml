@@ -1,7 +1,7 @@
 cloudflare-tunnel:
   cloudflare:
     # The name of the tunnel this instance will serve
-    tunnelName: "vega-k3s"
+    tunnelName: "vega-k8s"
     # If defined, no secret is created for the credentials, and instead, the secret referenced is used
     secretName: "cloudflare-tunnel-credentials"
     # Define ingress rules for the tunnel. See
@@ -13,8 +13,6 @@ cloudflare-tunnel:
         service: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local:80
       - hostname: longhorn.ikanago.dev
         service: http://longhorn-frontend.longhorn.svc.cluster.local:80
-      - hostname: nextcloud.ikanago.dev
-        service: http://nextcloud.nextcloud.svc.cluster.local:8080
 
   image:
-    tag: "2024.6.0"
+    tag: "2025.4.2"
